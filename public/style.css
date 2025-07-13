@@ -1,0 +1,117 @@
+/* RESET + BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #0f0f1a, #1b1b2e);
+  color: #f0f0f0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* WRAPPER */
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 30px 50px 30px;
+}
+
+/* NOTIFICATION BELL */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 1000;
+}
+
+.notification a {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: 0.2s;
+}
+
+.notification a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.bell-icon {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1827/1827392.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* HEADERS */
+h1, h2 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* SECTION BOXES */
+.section {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+}
+
+/* CARD GRID */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* SKILL + MATCH CARD */
+.skill-card, .match-card {
+  flex: 1 1 240px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 18px;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.skill-card:hover,
+.match-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+/* BUTTONS */
+button, .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-right: 10px;
+}
+
+button:hover, .btn:hover {
+  background-color: #0056b3;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: #00aaff;
+  font-weight: 500;
+}

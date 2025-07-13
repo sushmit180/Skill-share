@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="notification">
+    <a href="/home/notification/<%= user._id %>"><i class="bell-icon"></i></a>
+  </div>
+
+  <div class="wrapper">
+    <h1>Welcome, <%= user.username %></h1>
+
+    <div class="section">
+      <h2>Skills You Can Teach</h2>
+      <div class="card-list">
+        <% user.skillsTeach.forEach(skill => { %>
+          <div class="skill-card"><%= skill %></div>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>My Matches</h2>
+      <div class="card-list">
+        <% user.matches.forEach(match => { %>
+          <div class="match-card">
+            <strong><%= match.username %></strong>
+            <p><%= match.email %></p>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="section">
+      <a class="btn" href="/home/add/<%= user._id %>">Add Skill</a>
+      <a class="btn" href="/home/find/<%= user._id %>">Find Matches</a>
+    </div>
+  </div>
+</body>
+
+
+</html>

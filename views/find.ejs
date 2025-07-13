@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body>
+  <div class="container">
+    <h1>Matches for <%= currentUser.username %></h1>
+
+    <% if (matches.length === 0) { %>
+      <p>No matches found.</p>
+    <% } else { %>
+      <% matches.forEach(match => { %>
+        <div class="match-card">
+          <h3><%= match.username %></h3>
+          <p>Can teach: <%= match.skillsTeach.join(', ') %></p>
+          <p>Wants to learn: <%= match.skillsLearn.join(', ') %></p>
+          <form method="POST" action="/home/request/<%= match._id %>">
+            <input type="hidden" name="senderId" value="<%= currentUser._id %>">
+            <button type="submit">Send Request</button>
+        </form>
+        </div>
+      <% }) %>
+    <% } %>
+  </div>
+</body>
+
+</html>
